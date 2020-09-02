@@ -1,5 +1,6 @@
-# ngmd-carousel
-Just another carousel component for Angular
+# ngm-carousel
+
+Just another carousel component for Angular. The "m" stands for minimalist behaviors and options.
 
 ## Why another carousel component?
 
