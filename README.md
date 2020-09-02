@@ -16,7 +16,7 @@ This component will have always five slides. The number of slides in the datasou
 
 When the carousel shows up, you will see the slide number three and a piece of the slide number two at the left side and piece of slide number four at the rigth side.
 
-When you slide the carousel do the right, you will bring the slide two to the center, and a piece of the first slide will appear.
+When you slide the carousel to the right, you will bring the slide two to the center, and a piece of the first slide will appear.
 When the animation is done, the carousel will reset it's slides, bringing the third slide to the center again, but now the third slide shows the content from the slide two. Following the previous example, the carousel will show:
 
 [M] [N] [O] [A] [B]
