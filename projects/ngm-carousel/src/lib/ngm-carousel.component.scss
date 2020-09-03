@@ -1,0 +1,18 @@
+.carousel-slider {
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    height: 100%;
+}
+
+.slide {
+    flex: 0 0 91%;
+    max-width: 91%;
+}

@@ -1,29 +1,27 @@
-# ngm-carousel
+# NgmCarousel
 
-Just another carousel component for Angular. The "m" stands for minimalist behaviors and options.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
 
-## Why another carousel component?
+## Development server
 
-I've using and testing another carousel components and I found them too heavy, having too much dependencies and options.
-This component was designed to be simple, with hardcoded behaviors without dependencies.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-Feel free to fork this project to make your own carousel with your desired behaviors.
+## Code scaffolding
 
-## How it works?
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-This component will have always five slides. The number of slides in the datasource doesn't matter. If datasource is the first 15 letters of the alphabet, the slides will show content like this:
+## Build
 
-[N] [O] [A] [B] [C]
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-When the carousel shows up, you will see the slide number three and a piece of the slide number two at the left side and piece of slide number four at the rigth side.
+## Running unit tests
 
-When you slide the carousel to the right, you will bring the slide two to the center, and a piece of the first slide will appear.
-When the animation is done, the carousel will reset it's slides, bringing the third slide to the center again, but now the third slide shows the content from the slide two. Following the previous example, the carousel will show:
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-[M] [N] [O] [A] [B]
+## Running end-to-end tests
 
-All these behaviors are made using Angular Animations.
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-All you have to do to use it is to make a template for the slides. The carousel will use 100% of it's container. The heigth is based on the heigth of your template.
+## Further help
 
-
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

@@ -1,0 +1,171 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngm-carousel": {
+      "projectType": "library",
+      "root": "projects/ngm-carousel",
+      "sourceRoot": "projects/ngm-carousel/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngm-carousel/tsconfig.lib.json",
+            "project": "projects/ngm-carousel/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngm-carousel/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngm-carousel/src/test.ts",
+            "tsConfig": "projects/ngm-carousel/tsconfig.spec.json",
+            "karmaConfig": "projects/ngm-carousel/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngm-carousel/tsconfig.lib.json",
+              "projects/ngm-carousel/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "samples": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/samples",
+      "sourceRoot": "projects/samples/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/samples",
+            "index": "projects/samples/src/index.html",
+            "main": "projects/samples/src/main.ts",
+            "polyfills": "projects/samples/src/polyfills.ts",
+            "tsConfig": "projects/samples/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/samples/src/favicon.ico",
+              "projects/samples/src/assets"
+            ],
+            "styles": [
+              "projects/samples/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/samples/src/environments/environment.ts",
+                  "with": "projects/samples/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "samples:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "samples:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "samples:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/samples/src/test.ts",
+            "polyfills": "projects/samples/src/polyfills.ts",
+            "tsConfig": "projects/samples/tsconfig.spec.json",
+            "karmaConfig": "projects/samples/karma.conf.js",
+            "assets": [
+              "projects/samples/src/favicon.ico",
+              "projects/samples/src/assets"
+            ],
+            "styles": [
+              "projects/samples/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/samples/tsconfig.app.json",
+              "projects/samples/tsconfig.spec.json",
+              "projects/samples/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/samples/e2e/protractor.conf.js",
+            "devServerTarget": "samples:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "samples:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "cli": {
+    "analytics": "5610ad43-3daf-4433-ad0a-f1868f0a86f3"
+  },
+  "defaultProject": "ngm-carousel"
+}

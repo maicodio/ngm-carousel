@@ -1,0 +1,21 @@
+<div #slider class="carousel-slider" 
+  [ngClass]="mainClassName"
+  (mousedown)="slider_mousedown($event)"
+  (mouseleave)="slider_mouseleave($event)"
+  (mouseup)="slider_mouseup($event)"
+  (mousemove)="slider_mousemove($event)"
+  (touchstart)="slider_touchstart($event)"  
+  (touchend)="slider_touchend($event)"
+  (touchmove)="slider_touchmove($event)">
+  <div #container 
+    [@slideTransition]="{ value: animatedSlideState, params: {slideLeft: currentLeft} }" 
+    (@slideTransition.done)="slider_animate_end()" 
+    class="carousel-container">
+      <div class="slide" *ngFor="let slide of slides">
+        <ng-container *ngTemplateOutlet="slideTemplate, context: { item: slide.item }"></ng-container>
+      </div>
+  </div>
+</div>
+<div class="slider-button-container" [ngClass]="buttonsClassName">
+  <button [class.active]="item.selected" *ngFor="let item of buttons" (click)="selectSlide(item.dix)">{{item.dix+1}}</button>
+</div>
