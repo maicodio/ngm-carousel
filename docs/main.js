@@ -167,6 +167,9 @@ class NgmCarouselComponent {
         this.slider_move(event.touches[0].screenX);
     }
     slider_start(pageX) {
+        if (this.animatedSlideState != 'reset3' && this.animatedSlideState != 'normal') {
+            return;
+        }
         this.isDown = true;
         this.startX = pageX;
         this.lastDelta = 0;

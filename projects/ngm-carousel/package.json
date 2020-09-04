@@ -1,6 +1,27 @@
 {
   "name": "ngm-carousel",
   "version": "0.0.1",
+  "description": "A minimalist carousel component for Angular",
+  "author": 
+  { 
+    "name": "Maico Dionisio", 
+    "url": "https://github.com/maicodio/ngm-carousel" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maicodio/ngm-carousel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maicodio/ngm-carousel/issues"
+  },
+  "homepage": "https://maicodio.github.io/ngm-carousel/",
+  "keywords": [
+    "angular",
+    "carousel",
+    "component",
+    "minimalist"
+  ],
+  "license": "MIT",
   "peerDependencies": {
     "@angular/animations": "^10.0.14",
     "@angular/common": "^10.0.14",

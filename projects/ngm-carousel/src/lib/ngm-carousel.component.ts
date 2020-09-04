@@ -156,6 +156,9 @@ export class NgmCarouselComponent implements OnInit {
   }
 
   slider_start(pageX: number) {
+    if (this.animatedSlideState != 'reset3' && this.animatedSlideState != 'normal') {
+      return;
+    }
     this.isDown = true;
     this.startX = pageX;
     this.lastDelta = 0;
